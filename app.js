@@ -8,7 +8,7 @@ new Vue({
     },
     methods: {
         greet: function(name){
-            return "Good Morning! to "+name;
+            return "Good Morning! to "+name+" whose age is: "+this.age;
         }
     }
 })
