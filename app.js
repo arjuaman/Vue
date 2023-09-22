@@ -7,8 +7,8 @@ new Vue({
         web2: '<a href="https://www.google.com"> Holy grail! </a>'
     },
     methods: {
-        greet: function(){
-            return "Morning!";
+        greet: function(name){
+            return "Good Morning! to "+name;
         }
     }
 })
