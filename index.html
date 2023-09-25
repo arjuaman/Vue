@@ -10,10 +10,13 @@
 </head>
 <body>
     <div id="root">
-        <button v-on:click.once="add(5)">Add 5</button>
-        <p>This is the age: {{age}}</p>
-        <a v-on:click="click" href="www.google.com">Without prevent modifier, click please</a>
-        <a v-on:click.prevent="click" href="www.google.com">Prevent modifier, click please</a>
+        <p>See console for differences in keyboard events and modifiers: </p>
+        <label>Enter name: </label>
+        <input type="text" v-on:keyup="logName"/>
+        <label>Enter age: </label>
+        <input type="text" v-on:keyup.enter="logAge"/>
+        <label>Enter city: </label>
+        <input type="text" v-on:keyup.alt.enter="logCity"/>
     </div>
     <script src="app.js"></script>
 </body>
