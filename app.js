@@ -1,9 +1,9 @@
 new Vue({
     el: "#root",
     data: {
-        name: "Arju",
-        age: 25,
-        city: "Patna"
+        name: "",
+        age: "",
+        city: ""
     },
     methods: {
         logName: function(){

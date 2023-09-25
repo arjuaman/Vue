@@ -12,11 +12,14 @@
     <div id="root">
         <p>See console for differences in keyboard events and modifiers: </p>
         <label>Enter name: </label>
-        <input type="text" v-on:keyup="logName"/>
+        <input type="text" v-model="name"/>
+        <p>Entered name is: {{name}}</p>
         <label>Enter age: </label>
-        <input type="text" v-on:keyup.enter="logAge"/>
+        <input type="text" v-model="age"/>
+        <p>Entered age is: {{age}}</p>
         <label>Enter city: </label>
-        <input type="text" v-on:keyup.alt.enter="logCity"/>
+        <input type="text" v-model="city"/>
+        <p>Entered city is: {{city}}</p>
     </div>
     <script src="app.js"></script>
 </body>
