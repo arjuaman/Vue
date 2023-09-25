@@ -1,20 +1,23 @@
-new Vue({
-    el: '#root',
+var one = new Vue({
+    el: '#root1',
     data: {
-        health: 100,
-        ended: false
+        title: "Hello from instance 1"
     },
     methods: {
-        punch: function(){
-            this.health -= 10;
-            if ( this.health <= 0 ){
-                this.ended = true;
-            }
-        },
-        restart: function(){
-            this.health = 100;
-            this.ended = false;
-        }
+        
+    },
+    computed: {
+
+    }
+});
+
+var two = new Vue({
+    el: '#root2',
+    data: {
+        title: "Yo from instance 2"
+    },
+    methods: {
+        
     },
     computed: {
 

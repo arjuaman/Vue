@@ -9,20 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
     <body>
-        <div id="root">
-            <!-- bag image -->
-            <div id="bag" v-bind:class="{ burst: ended }"></div>
-
-            <!-- bag health bar -->
-            <div id="bag-health">
-                <div v-bind:style="{ width: health + '%' }"></div>
-            </div>
-
-            <!-- game control buttons -->
-            <div id="controls">
-                <button v-on:click="punch" v-show="!ended">Punch</button>
-                <button v-on:click="restart">Restart</button>
-            </div>
+        <div id="root1">
+            <h3>{{title}}</h3>
+        </div>
+        <div id="root2">
+            <h3>{{title}}</h3>
         </div>
     </body>
 
