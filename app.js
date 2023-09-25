@@ -1,18 +1,13 @@
 new Vue({
     el: "#root",
     data: {
-        available: false,
-        nearby: false
+        error: false,
+        success: false
     },
     methods: {
         
     },
     computed: {
-        appendClassNames: function(){
-            return{
-                available: this.available,
-                nearby: this.nearby
-            }
-        }        
+           
     }
 })

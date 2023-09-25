@@ -10,16 +10,10 @@
 </head>
 <body>
     <div id="root">
-        <h2>Example 1 without computed properties</h2>
-        <div @click="available = !available" :class="{available: available}">
-            <span>Roy</span>
-        </div>
-        <h2>Example 2 with computed properties</h2>
-        <div :class="appendClassNames">
-            <button @click="available = !available">Toggle availability</button>
-            <button @click="nearby = !nearby">Toggle nearby</button>
-            <span>Ryu</span>
-        </div>
+        <button v-on:click="error = !error">Toggle error</button>
+        <button v-on:click="success = !success">Toggle success</button>
+        <p v-if="error">Error happened</p>
+        <p v-if="success">success happened</p>
     </div>
     <script src="app.js"></script>
 </body>
