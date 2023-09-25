@@ -1,18 +1,18 @@
 new Vue({
     el: "#root",
     data: {
-        age: 20, a: 0, b:  0
+        available: false,
+        nearby: false
     },
     methods: {
-        addToA: function(){
-            console.log("A is run -> normal -> would run even if any other changes");
-            return this.a + this.age
-        }
+        
     },
     computed: {
-        addToB: function(){
-            console.log("B is run -> computed -> won't run if a changes");
-            return this.b + this.age
-        }
+        appendClassNames: function(){
+            return{
+                available: this.available,
+                nearby: this.nearby
+            }
+        }        
     }
 })
