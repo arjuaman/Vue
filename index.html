@@ -11,8 +11,18 @@
 <body>
     <div id="root">
         <ol>
-            <li v-for="i in characters">{{ i }}</li>
+            <li v-for="i in ninjas">{{ i }}</li>
         </ol>
+        <template v-for="(i, index) in ninjas">
+            <p>{{index}}. {{ i.name }}</p>
+            <span>-> {{i.age}}</span>
+        </template>
+        <br><br>
+        <template v-for="(i, index) in ninjas">
+            <div v-for="(val, key) in i">
+                {{index}}. {{key}} -> {{val}}
+            </div>
+        </template>
     </div>
     <script src="app.js"></script>
 </body>
