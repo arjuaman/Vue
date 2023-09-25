@@ -10,16 +10,12 @@
 </head>
 <body>
     <div id="root">
-        <p>See console for differences in keyboard events and modifiers: </p>
-        <label>Enter name: </label>
-        <input type="text" v-model="name"/>
-        <p>Entered name is: {{name}}</p>
-        <label>Enter age: </label>
-        <input type="text" v-model="age"/>
-        <p>Entered age is: {{age}}</p>
-        <label>Enter city: </label>
-        <input type="text" v-model="city"/>
-        <p>Entered city is: {{city}}</p>
+        <button @click="a++">Increment A</button>
+        <button @click="b++">Increment b</button>
+        <p @click="a++">Added {{age}} to A: {{addToA()}}</p>
+        <p @click="a++">Added {{age}} to B: {{addToB}}</p>
+        <p>{{a}}</p>
+        <p>{{b}}</p>
     </div>
     <script src="app.js"></script>
 </body>

@@ -1,19 +1,18 @@
 new Vue({
     el: "#root",
     data: {
-        name: "",
-        age: "",
-        city: ""
+        age: 20, a: 0, b:  0
     },
     methods: {
-        logName: function(){
-            console.log("Name entered");
-        },
-        logAge: function(){
-            console.log("Age entered");
-        },
-        logCity: function(){
-            console.log("City entered");
+        addToA: function(){
+            console.log("A is run -> normal -> would run even if any other changes");
+            return this.a + this.age
+        }
+    },
+    computed: {
+        addToB: function(){
+            console.log("B is run -> computed -> won't run if a changes");
+            return this.b + this.age
         }
     }
 })
