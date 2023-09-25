@@ -4,7 +4,9 @@ var one = new Vue({
         title: "Hello from instance 1"
     },
     methods: {
-        
+        changeTitleOfSecond: function(){
+            two.title = "TItle changed";
+        }
     },
     computed: {
 
@@ -23,3 +25,6 @@ var two = new Vue({
 
     }
 });
+
+// Can be done from anywhere like a nomral JS script too, example:
+// one.title = "Childe"
