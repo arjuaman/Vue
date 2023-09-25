@@ -12,8 +12,8 @@
     <div id="root">
         <button v-on:click="error = !error">Toggle error</button>
         <button v-on:click="success = !success">Toggle success</button>
-        <p v-if="error">Error happened</p>
-        <p v-else-if="success">success happened</p>
+        <p v-show="error">Error happened</p>
+        <p v-show="success">success happened</p>
     </div>
     <script src="app.js"></script>
 </body>
