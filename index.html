@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
-<body>
-    <div id="root">
-        <div id="bag" v-if="!ended"></div>
-        <div v-if="ended" id="bag" class="burst"></div>
-        <div id="bag-health">
-            <div v-bind:style="{width: health + '%'}"></div>
+    <body>
+        <div id="root">
+            <!-- bag image -->
+            <div id="bag" v-bind:class="{ burst: ended }"></div>
+
+            <!-- bag health bar -->
+            <div id="bag-health">
+                <div v-bind:style="{ width: health + '%' }"></div>
+            </div>
+
+            <!-- game control buttons -->
+            <div id="controls">
+                <button v-on:click="punch" v-show="!ended">Punch</button>
+                <button v-on:click="restart">Restart</button>
+            </div>
         </div>
-        <div>
-            <button v-on:click="decreaseHealth(18)" v-if="!ended">PUNCH</button>
-            <button v-on:click="restartGame()">RESTART</button>
-        </div>
-    </div>
+    </body>
+
     <script src="app.js"></script>
-</body>
 </html>
