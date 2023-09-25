@@ -1,17 +1,24 @@
 new Vue({
     el: '#root',
     data: {
-        characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
-        ninjas: [
-            { name: 'Ryu', age: 25 },
-            { name: 'Yoshi', age: 35 },
-            { name: 'Ken', age: 55 }
-        ]
+        health: 100,
+        ended: false
     },
     methods: {
-
+        decreaseHealth: function(val){
+            if(this.health > 0)
+                this.health -= val;
+            else{
+                this.health = 0;
+                this.ended = true;
+            }
+        },
+        restartGame: function(){
+            this.health = 100;
+            this.ended = false;
+        }
     },
     computed: {
-
+        
     }
 });

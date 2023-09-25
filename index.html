@@ -10,19 +10,15 @@
 </head>
 <body>
     <div id="root">
-        <ol>
-            <li v-for="i in ninjas">{{ i }}</li>
-        </ol>
-        <template v-for="(i, index) in ninjas">
-            <p>{{index}}. {{ i.name }}</p>
-            <span>-> {{i.age}}</span>
-        </template>
-        <br><br>
-        <template v-for="(i, index) in ninjas">
-            <div v-for="(val, key) in i">
-                {{index}}. {{key}} -> {{val}}
-            </div>
-        </template>
+        <div id="bag" v-if="!ended"></div>
+        <div v-if="ended" id="bag" class="burst"></div>
+        <div id="bag-health">
+            <div v-bind:style="{width: health + '%'}"></div>
+        </div>
+        <div>
+            <button v-on:click="decreaseHealth(18)" v-if="!ended">PUNCH</button>
+            <button v-on:click="restartGame()">RESTART</button>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
