@@ -1,10 +1,12 @@
+var datum = {
+    boss: "Oogway",
+    disciple: "Shifu"
+}
+
 Vue.component("greetcomponent",{
     template: '<div>{{boss}} passes the baton to {{disciple}} <button v-on:click.once="changeName">Change Name</button></div>',
     data: function(){
-        return{
-            boss: "Oogway",
-            disciple: "Shifu"
-        }
+        return datum;
     },
     methods: {
         changeName: function(){
