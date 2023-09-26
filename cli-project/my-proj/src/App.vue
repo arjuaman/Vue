@@ -6,7 +6,12 @@
 </template>
 
 <script>
+import Manga from './Manga.vue'
+
 export default {
+  components: {
+    'mangas': Manga
+  },
   data () {
     return {
       title: "Animeverse"
