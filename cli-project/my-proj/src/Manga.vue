@@ -15,3 +15,9 @@
         }
     }
 </script>
+
+<style scoped>
+    div {
+      font-family: 'Times New Roman', Times, serif;
+    }
+  </style>
