@@ -1,17 +1,26 @@
 Vue.component("greetcomponent",{
-    template: '<p>Component says hi!</p>'
+    template: '<div>{{boss}} passes the baton to {{disciple}} <button v-on:click.once="changeName">Change Name</button></div>',
+    data: function(){
+        return{
+            boss: "Oogway",
+            disciple: "Shifu"
+        }
+    },
+    methods: {
+        changeName: function(){
+            this.boss = "Mario",
+            this.disciple = "Luigi"
+        }
+    }
 });
 
 var one = new Vue({
     el: '#root1',
     data: {
-        title: "Hello from instance 1"
+        
     },
     methods: {
-        changeTitleOfSecond: function(){
-            alert("clicked")
-            two.title = "TItle changed";
-        }
+        
     },
     computed: {
 
@@ -21,7 +30,7 @@ var one = new Vue({
 var two = new Vue({
     el: '#root2',
     data: {
-        title: "Yo from instance 2"
+        
     },
     methods: {
         
