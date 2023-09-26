@@ -1,3 +1,7 @@
+Vue.component("greetcomponent",{
+    template: '<p>Component says hi!</p>'
+});
+
 var one = new Vue({
     el: '#root1',
     data: {
@@ -5,6 +9,7 @@ var one = new Vue({
     },
     methods: {
         changeTitleOfSecond: function(){
+            alert("clicked")
             two.title = "TItle changed";
         }
     },
