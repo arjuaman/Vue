@@ -18,7 +18,8 @@ export default{
     },
     methods: {
         changeTitle(){
-            this.title = "Sayonara!"
+            // this.title = "Sayonara!"
+            this.$emit('changeContent', "Changed via event from Footer");
         }
     }
 }
