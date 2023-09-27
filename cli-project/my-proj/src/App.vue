@@ -11,6 +11,7 @@
 <script>
 // Imports
 import Header from './components/Header.vue';
+
 import Footer from './components/Footer.vue';
 import Ninjas from './components/Ninjas.vue';
 
@@ -35,6 +36,24 @@ export default {
   },
   methods: {
     
+  },
+  beforeCreate(){
+    alert("beforeCreate")
+  },
+  created(){
+    alert("created")
+  },
+  beforeMount(){
+    alert("beforeMount")
+  },
+  mounted(){
+    alert("mounted")
+  },
+  beforeUpdate(){
+    alert("beforeUpdate")
+  },
+  updated(){
+    alert("updated")
   }
 }
 </script>
