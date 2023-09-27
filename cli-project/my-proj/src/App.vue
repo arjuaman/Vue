@@ -1,7 +1,7 @@
 <template>
   <div>
     <form-helper>
-      <h2 slot="title">This is a header</h2>
+      <h2 slot="title">{{creator}} is the GOAT</h2>
       <p slot="text">A para tag</p>
     </form-helper>
   </div>
@@ -16,7 +16,7 @@
     },
     data() {
       return {
-
+        creator: "Oda Sensei"
       }
     },
     methods: {
