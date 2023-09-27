@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is the form helper</h1>
+    <slot></slot>
   </div>
 </template>
 
