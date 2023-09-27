@@ -1,66 +1,23 @@
 <template>
   <div>
-      <app-header v-bind:title="title"></app-header>
-      <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
-      <hr>
-      <!-- <app-ninjas v-bind:ninjas="ninjas"></app-ninjas> -->
-      <app-footer v-bind:title="title"></app-footer>
+
   </div>
 </template>
 
 <script>
-// Imports
-import Header from './components/Header.vue';
+  import FormHelper from './components/FormHelper.vue';
 
-import Footer from './components/Footer.vue';
-import Ninjas from './components/Ninjas.vue';
-
-export default {
-  components: {
-      'app-header': Header,
-      'app-footer': Footer,
-      'app-ninjas': Ninjas
-  },
-  data () {
+  export default {
+    components: {
+      'form-helper': FormHelper,
+    },
+    data() {
       return {
-        ninjas: [
-                {name: 'JJK', speciality: 'Satoru Gojo', show: false},
-                {name: 'Naruto', speciality: 'Headband', show: false},
-                {name: 'One Piece', speciality: 'Straw Hat', show: false},
-                {name: 'Bleach', speciality: 'Bankai', show: false},
-                {name: 'Fullmetal Alchemist', speciality: 'Alchemy', show: false},
-                {name: 'Genshin', speciality: 'Paimon', show: false}
-            ],
-        title: "View Ninjas"
-      }
-  },
-  methods: {
-    
-  },
-  beforeCreate(){
-    alert("beforeCreate")
-  },
-  created(){
-    alert("created")
-  },
-  beforeMount(){
-    alert("beforeMount")
-  },
-  mounted(){
-    alert("mounted")
-  },
-  beforeUpdate(){
-    alert("beforeUpdate")
-  },
-  updated(){
-    alert("updated")
-  }
-}
-</script>
 
-<style>
-body{
-  margin: 0;
-  font-family: 'Nunito SemiBold';
-}
-</style>
+      }
+    },
+    methods: {
+
+    }
+  }
+</script>
