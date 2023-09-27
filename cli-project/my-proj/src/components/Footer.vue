@@ -1,14 +1,24 @@
 <template>
 <footer>
-    <h1>{{copyright}}</h1>
+    <h1 v-on:click="changeTitle">{{copyright}} for {{title}}</h1>
 </footer>
 </template>
 
 <script>
 export default{
+    props: {
+        title: {
+            type: String
+        }
+    },
     data(){
         return{
             copyright: "MIT License"
+        }
+    },
+    methods: {
+        changeTitle(){
+            this.title = "Sayonara!"
         }
     }
 }
