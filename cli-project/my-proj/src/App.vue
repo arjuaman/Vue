@@ -1,7 +1,7 @@
 <template>
   <div>
       <app-header></app-header>
-      <app-ninjas></app-ninjas>
+      <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
       <app-footer></app-footer>
   </div>
 </template>
@@ -20,7 +20,14 @@ export default {
   },
   data () {
       return {
-
+        ninjas: [
+                {name: 'JJK', speciality: 'Satoru Gojo', show: false},
+                {name: 'Naruto', speciality: 'Headband', show: false},
+                {name: 'One Piece', speciality: 'Straw Hat', show: false},
+                {name: 'Bleach', speciality: 'Bankai', show: false},
+                {name: 'Fullmetal Alchemist', speciality: 'Alchemy', show: false},
+                {name: 'Genshin', speciality: 'Paimon', show: false}
+            ]
       }
   }
 }
