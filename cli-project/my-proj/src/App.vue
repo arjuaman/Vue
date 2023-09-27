@@ -3,8 +3,8 @@
       <app-header v-bind:title="title"></app-header>
       <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
       <hr>
-      <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
-      <app-footer v-bind:title="title" v-on:changeContent="updateParent($event)"></app-footer>
+      <!-- <app-ninjas v-bind:ninjas="ninjas"></app-ninjas> -->
+      <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
 
@@ -34,9 +34,7 @@ export default {
       }
   },
   methods: {
-    updateParent(args){
-      this.title = args;
-    }
+    
   }
 }
 </script>

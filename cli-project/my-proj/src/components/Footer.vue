@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { bus } from "./../main";
 export default{
     props: {
         title: {
@@ -18,8 +19,9 @@ export default{
     },
     methods: {
         changeTitle(){
-            // this.title = "Sayonara!"
-            this.$emit('changeContent', "Changed via event from Footer");
+            this.title = "Sayonara!"
+            // this.$emit('changeContent', "Changed via event from Footer");
+            bus.$emit('changeContent', "Changed via event from Footer")
         }
     }
 }
