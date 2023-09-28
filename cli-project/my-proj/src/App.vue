@@ -2,7 +2,8 @@
   <div>
       <!-- <form-one></form-one>
       <form-two></form-two> -->
-      <component is="form-one"></component>
+      <!-- <component is="form-one"></component> -->
+      <component v-bind:is="showComp"></component>
   </div>
 </template>
 
