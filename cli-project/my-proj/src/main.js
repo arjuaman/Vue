@@ -29,6 +29,10 @@ Vue.filter('to-upper',(val)=>{
   return val.toUpperCase();
 })
 
+Vue.filter('trim-content',(val)=>{
+  return val.slice(0,100) + "...";
+})
+
 new Vue({
   el: '#app',
   render: h => h(App)
