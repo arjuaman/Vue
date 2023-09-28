@@ -2,7 +2,8 @@
     <!-- <div v-orient id="show-blogs"> -->
     <div v-orient:column="'wide'" id="show-blogs">
         <h1>All Blog Articles</h1>
-        <div v-for="blog in blogs" class="single-blog">
+        <input type="text" v-model="search" placeholder="search title" />
+        <div v-for="blog in filteredBlogs" class="single-blog">
             <h2 v-greenHeading>{{ blog.title | to-upper }}</h2>
             <article>{{ blog.body | trim-content }}</article>
         </div>
@@ -13,7 +14,8 @@
 export default {
     data () {
         return {
-            blogs: []
+            blogs: [],
+            search: ''
         }
     },
     methods: {
@@ -23,6 +25,14 @@ export default {
         this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data){
             this.blogs = data.body.slice(0,10);
         });
+    },
+    computed: {
+        filteredBlogs(){
+            return this.blogs.filter((blog)=>{
+                //condition for filtering
+                return blog.title.match(this.search);
+            });
+        }
     }
 }
 </script>
