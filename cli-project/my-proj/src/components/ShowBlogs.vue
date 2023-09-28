@@ -3,7 +3,7 @@
     <div v-orient:column="'wide'" id="show-blogs">
         <h1>All Blog Articles</h1>
         <div v-for="blog in blogs" class="single-blog">
-            <h2 v-greenHeading>{{ blog.title }}</h2>
+            <h2 v-greenHeading>{{ blog.title | to-upper }}</h2>
             <article>{{ blog.body }}</article>
         </div>
     </div>

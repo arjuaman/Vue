@@ -25,6 +25,10 @@ Vue.directive('orient',{
   }
 })
 
+Vue.filter('to-upper',(val)=>{
+  return val.toUpperCase();
+})
+
 new Vue({
   el: '#app',
   render: h => h(App)
