@@ -4,6 +4,8 @@
       <form-two></form-two> -->
       <!-- <component is="form-one"></component> -->
       <component v-bind:is="showComp"></component>
+      <button v-on:click="showComp = 'form-one'">Show form 1</button>
+      <button v-on:click="showComp = 'form-two'">Show form 2</button>
   </div>
 </template>
 
