@@ -1,38 +1,28 @@
 <template>
   <div>
-      <form-helper>
-          <div slot="form-header">
-              <h3>This is the title of a form</h3>
-              <p>This is some info about the form</p>
-          </div>
-          <div slot="form-fields">
-              <input type="text" placeholder="name" required />
-              <input type="password" placeholder="password" required />
-          </div>
-          <div slot="form-controls">
-              <button v-on:click="handleSubmit">Submit</button>
-          </div>
-      </form-helper>
+      <!-- <form-one></form-one>
+      <form-two></form-two> -->
+      <component is="form-one"></component>
   </div>
 </template>
 
 <script>
 // Imports
-import FormHelper from './components/FormHelper.vue'
+import FormOne from './components/FormOne.vue'
+import FormTwo from './components/FormTwo.vue'
 
 export default {
   components: {
-      'form-helper': FormHelper
+      'form-one': FormOne,
+      'form-two': FormTwo,
   },
   data () {
       return {
-
+        showComp: "form-one"
       }
   },
   methods: {
-      handleSubmit: function(){
-          alert('thanks for submitting');
-      }
+      
   }
 }
 </script>
