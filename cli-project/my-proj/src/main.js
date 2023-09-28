@@ -10,6 +10,16 @@ Vue.directive('greenHeading',{
   }
 });
 
+Vue.directive('orient',{
+  bind(el, binding, vnode){
+    if(binding.value === "wide"){
+      el.style.maxWidth = "1200px";
+    }else{
+      el.style.maxWidth = "500px";
+    }
+  }
+})
+
 new Vue({
   el: '#app',
   render: h => h(App)

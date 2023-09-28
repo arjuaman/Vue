@@ -1,5 +1,6 @@
 <template>
-    <div id="show-blogs">
+    <!-- <div v-orient id="show-blogs"> -->
+    <div v-orient="'wide'" id="show-blogs">
         <h1>All Blog Articles</h1>
         <div v-for="blog in blogs" class="single-blog">
             <h2 v-greenHeading>{{ blog.title }}</h2>
