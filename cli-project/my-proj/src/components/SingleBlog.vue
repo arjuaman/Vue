@@ -1,7 +1,13 @@
 <template>
     <div>
         <h1>{{blogContent.title}}</h1>
-        <article>{{blogContent.body}}</article>
+        <article>{{blogContent.content}}</article>
+        <article>{{ blogContent.author }}</article>
+            <article>Categories:
+                <ul>
+                    <li v-for="i in blogContent.categories">{{i}}</li>
+                </ul>
+            </article>
     </div>
 </template>
 
@@ -11,13 +17,14 @@ export default {
     data(){
         return{
             id: this.$route.params.id,
-            blogContent: ''
+            blogContent: {}
         }
     },
     created(){
-        this.$http.get('http://jsonplaceholder.typicode.com/posts/'+this.id).then(res=>{
-            console.log(res);
-            this.blogContent = res.body;
+        this.$http.get('https://react-sending-data-default-rtdb.asia-southeast1.firebasedatabase.app/posts/'+this.id+'.json').then(res=>{
+            return res.json();
+        }).then(res => {
+            this.blogContent = res;
         })
     }
 }

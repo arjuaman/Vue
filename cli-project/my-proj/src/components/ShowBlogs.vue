@@ -3,9 +3,15 @@
     <div v-orient:column="'wide'" id="show-blogs">
         <h1>All Blog Articles</h1>
         <input type="text" v-model="search" placeholder="search title" />
-        <div v-for="blog in filteredBlogs" class="single-blog">
+        <div v-for="blog in blogs" class="single-blog">
             <router-link v-bind:to="'/blog/'+blog.id"><h2 v-greenHeading>{{ blog.title | to-upper }}</h2></router-link>
-            <article>{{ blog.body | trim-content }}</article>
+            <article>{{ blog.content | trim-content}}</article>
+            <article>{{ blog.author }}</article>
+            <article>Categories:
+                <ul>
+                    <li v-for="i in blog.categories">{{i}}</li>
+                </ul>
+            </article>
         </div>
     </div>
 </template>
@@ -24,9 +30,16 @@ export default {
 
     },
     created() {
-        this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data){
-            this.blogs = data.body.slice(0,5);
-        });
+        this.$http.get('https://react-sending-data-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json').then(function(data){
+            return data.json(); //a promise
+        }).then(res=>{
+            var blogsArray = [];
+            for(let key in res){
+                res[key].id = key;
+                blogsArray.push(res[key])
+            }
+            this.blogs = blogsArray;
+        })
     },
     computed: {
         
