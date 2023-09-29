@@ -1,7 +1,7 @@
 <template>
     <!-- <div v-orient id="show-blogs"> -->
     <div v-orient:column="'wide'" id="show-blogs">
-        <h1>All Blog Articles</h1>
+        <h1>The Other Blog</h1>
         <input type="text" v-model="search" placeholder="search title" />
         <div v-for="blog in filteredBlogs" class="single-blog">
             <h2 v-greenHeading>{{ blog.title | to-upper }}</h2>
