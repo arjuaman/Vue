@@ -33,6 +33,18 @@ export default {
                 return blog.title.match(this.search);
             });
         }
+    },
+    filters: {
+        'to-upper': (val)=>{
+            return val.toUpperCase();
+        }
+    },
+    directives: {
+        'greenHeading': {
+            bind(el, binding, vnode){
+                el.style.color = "#427462";
+            }
+        }
     }
 }
 </script>

@@ -4,11 +4,11 @@ import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
 
-Vue.directive('greenHeading',{
-  bind(el, binding, vnode){
-    el.style.color = "#427462";
-  }
-});
+// Vue.directive('greenHeading',{
+//   bind(el, binding, vnode){
+//     el.style.color = "#427462";
+//   }
+// });
 
 Vue.directive('orient',{
   bind(el, binding, vnode){
@@ -25,9 +25,9 @@ Vue.directive('orient',{
   }
 })
 
-Vue.filter('to-upper',(val)=>{
-  return val.toUpperCase();
-})
+// Vue.filter('to-upper',(val)=>{
+//   return val.toUpperCase();
+// })
 
 Vue.filter('trim-content',(val)=>{
   return val.slice(0,100) + "...";
