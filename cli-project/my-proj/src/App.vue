@@ -1,5 +1,6 @@
 <template>
   <div>
+      <app-header></app-header>
       <router-view></router-view>
   </div>
 </template>
@@ -8,11 +9,13 @@
 // Imports
 import ShowBlogs from './components/ShowBlogs.vue';
 import TheOtherBlog from './components/TheOtherBlog.vue';
+import Header from './components/Header.vue';
 
 export default {
   components: {
       'show-blogs': ShowBlogs,
-      'other-blog': TheOtherBlog
+      'other-blog': TheOtherBlog,
+      'app-header' : Header
   },
   data () {
       return {
