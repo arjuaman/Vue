@@ -4,7 +4,7 @@
         <h1>All Blog Articles</h1>
         <input type="text" v-model="search" placeholder="search title" />
         <div v-for="blog in filteredBlogs" class="single-blog">
-            <h2 v-greenHeading>{{ blog.title | to-upper }}</h2>
+            <router-link v-bind:to="'/blog/'+blog.id"><h2 v-greenHeading>{{ blog.title | to-upper }}</h2></router-link>
             <article>{{ blog.body | trim-content }}</article>
         </div>
     </div>
