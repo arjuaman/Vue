@@ -33,4 +33,10 @@ body{
   margin: 0;
   font-family: 'Nunito SemiBold';
 }
+.router-link-active{
+  color: red;
+}
+/* .router-link-exact-active{
+  color: red;
+} */
 </style>
