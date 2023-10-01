@@ -1,15 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <h1>{{greet}} {{ name }}</h1>
+  <p>Welcome to {{ city }}</p>
+  <p v-text="city"></p>
+  <!-- <p v-text="city">Welcome to {{ city }}</p> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return{
+      greet: "Hey",
+      name: "Arju",
+      city: "Gotham"
+    }
   }
 }
 </script>
