@@ -1,14 +1,10 @@
 <template>
-  <h1>Movie review</h1>
-  <p v-bind:class="hitOrNot && 'theme'">Batman</p>
-  <p v-bind:class="hitOrNot ? 'consolation': 'theme' ">Batman</p>
-  <p v-bind:class="hitOrNot && 'theme'">Batman</p>
-  <p v-bind:class="[hitOrNot && 'theme',marvel?'marvel':'dc']">Spiderman</p>
-  <p v-bind:class="{
-    'theme': hitOrNot,
-    'dc': marvel,
-    'marvel': !marvel
-  }">Yellow Panther</p>
+  <h3 v-bind:style="{
+    'background-color': 'green'
+  }">Object based: This is a success without base</h3>
+  <h3 v-bind:style="baseStyle">This is base</h3>
+  <h3 v-bind:style="[baseStyle, successStyle]">Array based: This is a success with base</h3>
+  <h3 v-bind:style="[baseStyle, failStyle]">Array based: This is a fail with base</h3>
 </template>
 
 <script>
@@ -16,25 +12,21 @@ export default {
   name: 'App',
   data() {
     return{
-      hitOrNot: true,
-      marvel: true,
-      dc: true
+      baseStyle: {
+        color: 'orange',
+        fontSize: '40px'
+      },
+      successStyle: {
+        backgroundColor: 'green'
+      },
+      failStyle: {
+        backgroundColor: 'red'
+      }
     }
   }
 }
 </script>
 
 <style>
-.theme{
-  color: green;
-}
-.consolation{
-  color: red;
-}
-.marvel{
-  font-family:fantasy;
-}
-.dc{
-  font-size: large;
-}
+
 </style>
