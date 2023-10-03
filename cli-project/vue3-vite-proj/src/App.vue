@@ -1,12 +1,7 @@
 <template>
-  <div>Name is: {{name}}</div>
-  <div v-pre>Name is: {{name}}</div>
-  <div>
-    <p>Inside child, Name is: {{name}}</p>
-  </div>
-  <div v-pre>
-    <p>Inside child, Name is: {{name}}</p>
-  </div>
+  <h3 v-once>{{name}}</h3>
+  <button v-on:click="changeName">Change 1st</button>
+  <button v-on:click="changeName2">CHange 2nd</button>
 </template>
 
 <script>
@@ -17,7 +12,14 @@ export default {
     }
   },
   methods: {
-    
+    changeName(){
+      this.name = "Robin";
+    },
+    methods: {
+      changeName2() {
+        this.name = "Hawk";
+      }
+    },
   },
 }
 </script>
