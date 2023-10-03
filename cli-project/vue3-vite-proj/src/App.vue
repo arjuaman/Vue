@@ -1,17 +1,10 @@
 <template>
-  <ul>
-    <li v-for="i in heroes" v-bind:key="i">{{i}}</li>
-  </ul>
-  <!-- <div> -->
-    <div v-for="i in ninjas" v-bind:key="i.name">{{i.name}} {{i.age}}</div>
-  <!-- </div> -->
-  <div>
-    <div v-for="person in actors" v-bind:key="person.name">
-      {{person.name}}
-      <p v-for="j in person.movies" v-bind:key="j">{{j}}</p>
-    </div>
-  </div>
-  <h3 v-for="(val, key, ind) in myInfo" :key="val">{{val}} {{key}} {{ind}}</h3>
+  <!-- <h2 v-for="name in heroes" :key="name" v-if="name==='Logan'">{{name}}</h2> -->
+  <template v-for="name in heroes" :key="name">
+    <h2 v-if="name==='Logan'">
+      {{name}}
+    </h2>
+  </template>
 </template>
 
 <script>
