@@ -1,10 +1,9 @@
 <template>
-  <!-- <h2 v-for="name in heroes" :key="name" v-if="name==='Logan'">{{name}}</h2> -->
-  <template v-for="name in heroes" :key="name">
-    <h2 v-if="name==='Logan'">
-      {{name}}
-    </h2>
-  </template>
+  <h3>Name is: {{myInfo.name}}</h3>
+  <button @click="changeName">Change name</button>
+  <button @click="changeName($event), changeAge(6, $event)">Change name and number</button>
+  <h3>Age is: {{myInfo.age}}</h3>
+  <button @click="changeAge(6, $event)">Change age by adding 5</button>
 </template>
 
 <script>
@@ -12,6 +11,7 @@ export default {
   name: 'App',
   data() {
     return{
+      num: 5,
       heroes: ["Clark","Dent","Logan"],
       ninjas: [
             { name: 'Ryu', age: 25 },
@@ -38,7 +38,18 @@ export default {
         occ: "Megabot"
       }
     }
-  }
+  },
+  methods: {
+    changeName(e) {
+      console.log(e);
+      let x = Math.floor(Math.random()*3);
+      this.myInfo.name = this.heroes[x];
+    },
+    changeAge(val, e){
+      console.log(e);
+      this.myInfo.age = this.num + this.myInfo.age + val;
+    }
+  },
 }
 </script>
 
