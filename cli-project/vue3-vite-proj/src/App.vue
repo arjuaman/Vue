@@ -1,10 +1,11 @@
 <template>
-  <h3 v-bind:style="{
-    'background-color': 'green'
-  }">Object based: This is a success without base</h3>
-  <h3 v-bind:style="baseStyle">This is base</h3>
-  <h3 v-bind:style="[baseStyle, successStyle]">Array based: This is a success with base</h3>
-  <h3 v-bind:style="[baseStyle, failStyle]">Array based: This is a fail with base</h3>
+  <p v-if="num === 0">This is zero</p>
+  <p v-else-if="num < 0">Negative number</p>
+  <p v-else-if="num > 0">Positive number</p>
+  <p v-else>Not a number</p>
+
+  <p v-show="num === 0">This is zero</p>
+  <p v-show="num !== 0">This is non-zero</p>
 </template>
 
 <script>
@@ -12,16 +13,7 @@ export default {
   name: 'App',
   data() {
     return{
-      baseStyle: {
-        color: 'orange',
-        fontSize: '40px'
-      },
-      successStyle: {
-        backgroundColor: 'green'
-      },
-      failStyle: {
-        backgroundColor: 'red'
-      }
+      num: "p"
     }
   }
 }
