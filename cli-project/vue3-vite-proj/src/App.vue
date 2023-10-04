@@ -1,32 +1,29 @@
 <template>
-  <div>Fullname using computed: {{fullName}}</div>
-  <div>Fullname using method: {{getFullName()}}</div>
-  <input type="text" name="lol" id="lol" v-model="country">
+  <div>This is the parent component</div>
+  <button @click="showPopup = true">Show popup</button>
+  <Popup v-show="showPopup" @closePopup="toggleVisibility" />
 </template>
 
 <script>
+import Popup from "./components/Popup.vue";
+
 export default {
-  data() {
+  components: {
+    Popup
+  },
+  data(){
     return{
-      fname: "Bruce",
-      lname: "Wayne",
-      country: ""
+      showPopup: false
     }
   },
   methods: {
-    getFullName(){
-      console.log("inside methods");
-      return this.fname +' '+ this.lname;
-    }
-  },
-  computed: {
-    fullName(){
-      console.log("inside computed");
-      return this.fname +' '+ this.lname;
+    toggleVisibility(arg){
+      this.showPopup = false;
+      console.log(arg);
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 </style>
