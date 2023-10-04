@@ -1,6 +1,7 @@
 <template>
   <Article v-bind:likes=50 :type="true" />
-  <Article title="Custom title" v-bind:likes=50 :type="true" />
+  <Article id="my-article" title="Custom title" v-bind:likes=50 :type="true" />
+  <greet id="my-greet"/>
 </template>
 
 <script>

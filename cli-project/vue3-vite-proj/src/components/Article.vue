@@ -1,8 +1,10 @@
 <template>
-  <h1>{{ title }}</h1>
-  <div>Article Component</div>
-  <div>Likes: {{likes}}</div>
-  <div>Published? {{type}}</div>
+  <div>
+    <h1>{{ title }}</h1>
+    <div v-bind="$attrs">Article Component</div>
+    <div>Likes: {{likes}}</div>
+    <div>Published? {{type}}</div>
+  </div>
 </template>
 
 <script>
@@ -17,6 +19,7 @@ export default {
     likes: Number,
     type: Boolean
   },
+  inheritAttrs: false
 };
 </script>
 
