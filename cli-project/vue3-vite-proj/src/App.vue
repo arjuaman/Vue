@@ -2,6 +2,8 @@
   <div>Fullname using computed: {{fullName}}</div>
   <div>Fullname using method: {{getFullName()}}</div>
   <input type="text" name="lol" id="lol" v-model="country">
+
+  <div v-for="i in expensiveItems" :key="i.id">{{i.name}} {{i.price}}</div>
 </template>
 
 <script>
@@ -10,7 +12,12 @@ export default {
     return{
       fname: "Bruce",
       lname: "Wayne",
-      country: ""
+      country: "",
+      items: [
+        {id: 1, price: 50, name: "gg"},
+        {id: 2, price: 150, name: "ff"},
+        {id: 3, price: 250, name: "rr"}
+      ]
     }
   },
   methods: {
@@ -23,6 +30,9 @@ export default {
     fullName(){
       console.log("inside computed");
       return this.fname +' '+ this.lname;
+    },
+    expensiveItems(){
+      return this.items.filter(item => item.price>100);
     }
   }
 };
