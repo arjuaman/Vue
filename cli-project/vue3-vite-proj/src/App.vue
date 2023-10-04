@@ -1,37 +1,27 @@
 <template>
-  <div>Movie is: {{movieInfo.name}}</div>
-  <input type="text" v-model="movieInfo.name" />
-  <input type="text" v-model="movieInfo.hit" />
+  <!-- <greet></greet> -->
+  <greet name="Clara" title="title"/>
+  <greet name="Clara" v-bind:title="title"/>
+  <greet name="Seele"/>
+  <greet name="Bronya"/>
+  <!-- <Greet /> -->
 </template>
 
 <script>
+import Greet from "./components/Greet.vue";
+
 export default {
-  data() {
+  components: {
+    greet: Greet,
+    // Greet
+  },
+  data(){
     return{
-      movieInfo: {
-        name: '',
-        hit: ''
-      }
-    }
-  },
-  methods: {
-    changeName(){
-      this.movieInfo.name = 'superman'
-    }
-  },
-  computed: {
-    
-  },
-  watch: {
-    movieInfo: {
-      handler(newval, oldval){
-        console.log("Movie is: ",newval.name, " and hit: ",newval.hit);
-      },
-      deep: true
+      title: "HSR"
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 </style>
