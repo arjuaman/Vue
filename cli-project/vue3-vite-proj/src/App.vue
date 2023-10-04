@@ -1,14 +1,13 @@
 <template>
-  <div>Current volume is: {{volume}}</div>
-  <button @click="volume+=2">increase volume</button>
-  <button @click="volume-=2">decrease volume</button>
+  <div>Movie is: {{movie}}</div>
+  <input type="text" v-model="movie" />
 </template>
 
 <script>
 export default {
   data() {
     return{
-      volume: 0
+      movie: 'Batman'
     }
   },
   methods: {
@@ -18,10 +17,11 @@ export default {
     
   },
   watch: {
-    volume(newval, oldval){
-      if(newval>oldval && newval===16){
-        console.log("VOlume high");
-      }
+    movie: {
+      handler(newval, oldval){
+        console.log("Movie is: ",newval);
+      },
+      immediate: true
     }
   }
 };
