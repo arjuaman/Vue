@@ -17,8 +17,9 @@ export default {
     }
   },
   methods: {
-    toggleVisibility(){
+    toggleVisibility(arg){
       this.showPopup = false;
+      console.log(arg);
     }
   }
 };
