@@ -1,11 +1,12 @@
 <template>
   <h2>Component F</h2>
-  <h3>Component F username: </h3>
+  <h3>Component F username: {{username}}</h3>
 </template>
 
 <script>
 export default {
-  name: 'ComponentF'
+  name: 'ComponentF',
+  inject: ['username']
 }
 </script>
 

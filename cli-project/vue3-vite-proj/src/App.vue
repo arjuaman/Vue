@@ -13,6 +13,9 @@ export default {
     return{
       
     }
+  },
+  provide: {
+    username: "Welt"
   }
 };
 </script>
