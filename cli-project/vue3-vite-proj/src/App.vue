@@ -1,23 +1,24 @@
 <template>
-  <div>{{name}}</div>
-  <ComponentC />
+  <div>This is the parent component</div>
+  <button @click="showPopup = true">Show popup</button>
+  <Popup v-show="showPopup" @closePopup="toggleVisibility" />
 </template>
 
 <script>
-import ComponentC from "./components/ComponentC.vue";
+import Popup from "./components/Popup.vue";
 
 export default {
   components: {
-    ComponentC
+    Popup
   },
   data(){
     return{
-      name: "Welt"
+      showPopup: false
     }
   },
-  provide() {
-    return{
-      username: this.name
+  methods: {
+    toggleVisibility(){
+      this.showPopup = false;
     }
   }
 };
