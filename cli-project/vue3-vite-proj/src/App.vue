@@ -1,27 +1,33 @@
 <template>
-  <div>Movie is: {{movie}}</div>
-  <input type="text" v-model="movie" />
+  <div>Movie is: {{movieInfo.name}}</div>
+  <input type="text" v-model="movieInfo.name" />
+  <input type="text" v-model="movieInfo.hit" />
 </template>
 
 <script>
 export default {
   data() {
     return{
-      movie: 'Batman'
+      movieInfo: {
+        name: '',
+        hit: ''
+      }
     }
   },
   methods: {
-    
+    changeName(){
+      this.movieInfo.name = 'superman'
+    }
   },
   computed: {
     
   },
   watch: {
-    movie: {
+    movieInfo: {
       handler(newval, oldval){
-        console.log("Movie is: ",newval);
+        console.log("Movie is: ",newval.name, " and hit: ",newval.hit);
       },
-      immediate: true
+      deep: true
     }
   }
 };
