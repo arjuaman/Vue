@@ -1,4 +1,5 @@
 <template>
+  <div>{{name}}</div>
   <ComponentC />
 </template>
 
@@ -11,11 +12,13 @@ export default {
   },
   data(){
     return{
-      
+      name: "Welt"
     }
   },
-  provide: {
-    username: "Welt"
+  provide() {
+    return{
+      username: this.name
+    }
   }
 };
 </script>
