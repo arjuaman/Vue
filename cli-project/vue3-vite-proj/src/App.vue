@@ -1,25 +1,21 @@
 <template>
-  <div>This is the parent component</div>
-  <button @click="showPopup = true">Show popup</button>
-  <Popup v-show="showPopup" @closePopup="toggleVisibility" />
+  <div>
+    <input v-model="movieNamePre">
+  </div>
+  <CustomInput v-model="movieName"/>
 </template>
 
 <script>
-import Popup from "./components/Popup.vue";
+import CustomInput from "./components/CustomInput.vue";
 
 export default {
   components: {
-    Popup
+    CustomInput
   },
   data(){
     return{
-      showPopup: false
-    }
-  },
-  methods: {
-    toggleVisibility(arg){
-      this.showPopup = false;
-      console.log(arg);
+      movieNamePre: '',
+      movieName: ''
     }
   }
 };
