@@ -1,26 +1,30 @@
 <template>
-  <NameList>
-    <template v-slot:forNamedSlots>  
-    </template>
+  <button @click="current = 'TabA'">Tab A</button>
+  <button @click="current = 'TabB'">Tab B</button>
+  <button @click="current = 'TabC'">Tab C</button>
 
-    <template v-slot:default="slotPropsXYZ">
-      <h2>Movie name is: {{slotPropsXYZ.movie}}</h2>
-      <h3>Rating is: {{slotPropsXYZ.rating}}</h3>
-      <p>Starring: {{slotPropsXYZ.char}}</p>
-    </template>
-
-    <template v-slot:trying="input">
-      {{input.data}}
-    </template>
-  </NameList>
+  <keep-alive>
+    <component :is="current"/>
+  </keep-alive>
+  
 </template>
 
 <script>
-import NameList from "./components/NameList.vue";
+import TabA from "./components/TabA.vue";
+import TabB from "./components/TabB.vue";
+import TabC from "./components/TabC.vue";
 
 export default {
+  name: 'App',
   components: {
-    NameList
+    TabA,
+    TabB,
+    TabC
+  },
+  data(){
+    return{
+      current: 'TabA'
+    }
   }
 };
 </script>
