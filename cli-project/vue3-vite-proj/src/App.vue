@@ -1,22 +1,22 @@
 <template>
-  <div>
-    <input v-model="movieNamePre">
-  </div>
-  <CustomInput v-model="movieName"/>
+  <NameList>
+    <template v-slot:forNamedSlots>  
+    </template>
+
+    <template v-slot:default="slotPropsXYZ">
+      <h2>Movie name is: {{slotPropsXYZ.movie}}</h2>
+      <h3>Rating is: {{slotPropsXYZ.rating}}</h3>
+      <p>Starring: {{slotPropsXYZ.char}}</p>
+    </template>
+  </NameList>
 </template>
 
 <script>
-import CustomInput from "./components/CustomInput.vue";
+import NameList from "./components/NameList.vue";
 
 export default {
   components: {
-    CustomInput
-  },
-  data(){
-    return{
-      movieNamePre: '',
-      movieName: ''
-    }
+    NameList
   }
 };
 </script>
