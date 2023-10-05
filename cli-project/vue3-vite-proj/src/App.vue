@@ -1,25 +1,16 @@
 <template>
-  <button @click="current = 'TabA'">Tab A</button>
-  <button @click="current = 'TabB'">Tab B</button>
-  <button @click="current = 'TabC'">Tab C</button>
-
-  <keep-alive>
-    <component :is="current"/>
-  </keep-alive>
-  
+  <teleport to="#portal-root">
+    <Portal />
+  </teleport>
 </template>
 
 <script>
-import TabA from "./components/TabA.vue";
-import TabB from "./components/TabB.vue";
-import TabC from "./components/TabC.vue";
+import Portal from "./components/Portal.vue";
 
 export default {
   name: 'App',
   components: {
-    TabA,
-    TabB,
-    TabC
+    Portal
   },
   data(){
     return{
