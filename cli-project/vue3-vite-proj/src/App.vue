@@ -8,6 +8,10 @@
       <h3>Rating is: {{slotPropsXYZ.rating}}</h3>
       <p>Starring: {{slotPropsXYZ.char}}</p>
     </template>
+
+    <template v-slot:trying="input">
+      {{input.data}}
+    </template>
   </NameList>
 </template>
 
