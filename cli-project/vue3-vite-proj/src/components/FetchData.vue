@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="fetch">Fetch Data</button>
+    <!-- <button @click="fetch">Fetch Data</button> -->
   </div>
 </template>
 
@@ -13,6 +13,9 @@ export default {
     return {
       data: "",
     };
+  },
+  created(){
+      this.fetch();
   },
   methods: {
     fetch() {
