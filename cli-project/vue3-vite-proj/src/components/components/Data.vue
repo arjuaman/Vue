@@ -1,18 +1,15 @@
 <template>
-  
+    <div>
+
+    </div>
 </template>
 
 <script>
-
-export default {
-  name: 'App',
-  data(){
-    return{
-       
+    export default {
+        
     }
-  }
-};
 </script>
 
 <style scoped>
+
 </style>
