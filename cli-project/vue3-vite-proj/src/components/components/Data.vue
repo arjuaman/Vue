@@ -1,12 +1,15 @@
 <template>
-  <div>Tab B Content</div>
+    <div>
+
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'TabB',
-}
+    export default {
+        
+    }
 </script>
 
 <style scoped>
+
 </style>
