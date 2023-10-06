@@ -1,17 +1,14 @@
 <template>
-  <FetchData />
-  <PostData />
+  <SampleRef />
 </template>
 
 <script>
-import FetchData from './components/FetchData.vue';
-import PostData from './components/PostData.vue';
+import SampleRef from './components/SampleRef.vue';
 
 export default {
   name: 'App',
   components: {
-    FetchData,
-    PostData
+    SampleRef
   },
   data(){
     return{
