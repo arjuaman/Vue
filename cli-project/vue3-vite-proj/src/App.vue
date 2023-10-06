@@ -1,20 +1,21 @@
 <template>
-  <teleport to="#portal-root">
-    <Portal />
-  </teleport>
+  <FetchData />
+  <PostData />
 </template>
 
 <script>
-import Portal from "./components/Portal.vue";
+import FetchData from './components/FetchData.vue';
+import PostData from './components/PostData.vue';
 
 export default {
   name: 'App',
   components: {
-    Portal
+    FetchData,
+    PostData
   },
   data(){
     return{
-      current: 'TabA'
+       
     }
   }
 };
