@@ -1,14 +1,17 @@
 <template>
-  <SampleRef />
+  <TabA />
+  <TabB />
 </template>
 
 <script>
-import SampleRef from './components/SampleRef.vue';
+import TabA from './components/TabA.vue';
+import TabB from './components/TabB.vue';
 
 export default {
   name: 'App',
   components: {
-    SampleRef
+    TabA,
+    TabB
   },
   data(){
     return{
