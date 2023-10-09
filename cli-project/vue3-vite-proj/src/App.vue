@@ -1,21 +1,24 @@
 <template>
-  <div>{{name}}</div>
+  <div>Count is: {{count}}</div>
+  <button @click="increment">Increment</button>
 </template>
 
 <script> 
-import {reactive, toRefs} from 'vue';
+import {ref, reactive, toRefs} from 'vue';
+
 export default {
   name: 'App',
   setup(){
-    let state = reactive({
-      name: "Tanjiro"
-    });
+    let count = ref(0);
 
-    setTimeout(()=>{
-      state.name = "Kid"
-    }, 2000);
+    function increment(){
+      count.value++;
+    }
 
-    return toRefs(state);
+    return{
+      count,
+      increment
+    }
   }
 }
 </script>
