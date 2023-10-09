@@ -1,40 +1,23 @@
 <template>
-  <div>{{oName}}</div>
-  <div>{{cName}}</div>
-
-  <div>{{state.fname}} {{state.genre}}</div>
-  <div>{{statement1}}</div>
-  <div>{{statement2}}</div>
+  <div>{{name}}</div>
+  <div>{{reactive_name}}</div>
 </template>
 
 <script> 
-import { ref, reactive } from "vue";
-
+import {ref} from 'vue';
 export default {
   name: 'App',
-  data(){
-    return{
-       oName: "Harriet"
-    }
-  },
   setup(){
-    const cName = ref("Achilles");
-    // alert(cName.value);
-    // alert(cName.rawValue);
-
-    const state = reactive({
-      fname: "Troy",
-      genre: "History"
-    })
-
-    const statement1 = `${cName} was the protagonist as well as antagonist in the ${state.genre} drama ${state.fname}`;
-    const statement2 = `${cName.value} was the protagonist as well as antagonist in the ${state.genre} drama ${state.fname}`;
-
+    let name= "Achilles";
+    let reactive_name = ref("Achilles");
+    setTimeout(()=>{
+      name = "Heron";
+      reactive_name.value = "Heron"
+      console.log(name, reactive_name);
+    },2000);
     return{
-      cName,
-      state,
-      statement1,
-      statement2
+      name,
+      reactive_name
     }
   }
 }
