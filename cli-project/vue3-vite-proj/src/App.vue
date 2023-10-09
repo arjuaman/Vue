@@ -1,9 +1,10 @@
 <template>
-  <div>Count is: {{count}}</div>
-  <button @click="increment">Increment</button>
-
-  <div>Reactive count is: {{state.rcount}}</div>
-  <button @click="rIncrement">Reactive Increment</button>
+  <input type="text" v-model="fname">
+  <input type="text" v-model="lname">
+  <input type="text" v-model="full">
+  <div>First name is: {{fname}}</div>
+  <div>Last name is: {{lname}}</div>
+  <div>Full name is: {{full}}</div>
 </template>
 
 <script> 
@@ -12,25 +13,14 @@ import {ref, reactive, toRefs} from 'vue';
 export default {
   name: 'App',
   setup(){
-    let count = ref(0);
-
-    function increment(){
-      count.value++;
-    }
-
     const state = reactive({
-      rcount: '0'
+      fname: '',
+      lname: '',
+      full: ''
     })
 
-    function rIncrement(){
-      state.rcount++;
-    }
-
     return{
-      count,
-      increment,
-      state,
-      rIncrement
+      ...toRefs(state)
     }
   }
 }
