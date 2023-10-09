@@ -1,6 +1,9 @@
 <template>
   <div>Count is: {{count}}</div>
   <button @click="increment">Increment</button>
+
+  <div>Reactive count is: {{state.rcount}}</div>
+  <button @click="rIncrement">Reactive Increment</button>
 </template>
 
 <script> 
@@ -15,9 +18,19 @@ export default {
       count.value++;
     }
 
+    const state = reactive({
+      rcount: '0'
+    })
+
+    function rIncrement(){
+      state.rcount++;
+    }
+
     return{
       count,
-      increment
+      increment,
+      state,
+      rIncrement
     }
   }
 }
