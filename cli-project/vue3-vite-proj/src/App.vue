@@ -1,24 +1,21 @@
 <template>
   <div>{{name}}</div>
-  <div>{{reactive_name}}</div>
 </template>
 
 <script> 
-import {ref} from 'vue';
+import {reactive, toRefs} from 'vue';
 export default {
   name: 'App',
   setup(){
-    let name= "Achilles";
-    let reactive_name = ref("Achilles");
+    let state = reactive({
+      name: "Tanjiro"
+    });
+
     setTimeout(()=>{
-      name = "Heron";
-      reactive_name.value = "Heron"
-      console.log(name, reactive_name);
-    },2000);
-    return{
-      name,
-      reactive_name
-    }
+      state.name = "Kid"
+    }, 2000);
+
+    return toRefs(state);
   }
 }
 </script>
