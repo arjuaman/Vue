@@ -15,7 +15,8 @@ export default {
   },
   setup(){
     const cName = ref("Achilles");
-    console.log(cName);
+    alert(cName.value);
+    alert(cName.rawValue);
     return{
       cName
     }
