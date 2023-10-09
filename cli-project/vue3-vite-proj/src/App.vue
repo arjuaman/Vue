@@ -1,6 +1,6 @@
 <template>
   <input type="text" v-model="fname">
-  
+  <input type="text" v-model="lname">
 </template>
 
 <script> 
@@ -10,12 +10,16 @@ export default {
   name: 'App',
   setup(){
     const fname = ref('');
-    watch(fname,(newVal, oldVal)=>{
-      console.log("new value is: ",newVal);
-      console.log("old value is: ",oldVal);
+    const lname = ref('');
+    watch([fname, lname],(newVal, oldVal)=>{
+      console.log("new value is: ",newVal[0]);
+      console.log("old value is: ",oldVal[0]);
+      console.log("new value is: ",newVal[1]);
+      console.log("old value is: ",oldVal[1]);
     })
     return{
-      fname
+      fname,
+      lname
     }
   }
 }
