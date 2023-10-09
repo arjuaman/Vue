@@ -16,6 +16,9 @@ export default {
       console.log("old value is: ",oldVal[0]);
       console.log("new value is: ",newVal[1]);
       console.log("old value is: ",oldVal[1]);
+    },
+    {
+      immediate: true
     })
     return{
       fname,
