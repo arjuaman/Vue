@@ -20,11 +20,14 @@ export default {
       lname: ''
     })
 
-    watch(state,function(newval, oldval){
-      console.log("New value is: ",newval.fname);
-      console.log("New value is: ",newval.lname);
-      console.log("Old value is: ",oldval.fname);
-      console.log("Old value is: ",oldval.lname);
+    watch(()=>{
+        return {...state}
+      },
+      function(newval, oldval){
+        console.log("New value is: ",newval.fname);
+        console.log("Old value is: ",oldval.fname);
+        console.log("New value is: ",newval.lname);
+        console.log("Old value is: ",oldval.lname);
     })
 
     return{
