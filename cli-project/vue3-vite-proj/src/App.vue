@@ -1,28 +1,27 @@
 <template>
-  <input type="text" v-model="fname">
-  <input type="text" v-model="lname">
+  <input type="text" v-model="movie">
+  <Child :movieName="movie" @sayHelloTo="doSomething" />
 </template>
 
 <script> 
-import {ref, watch, reactive, toRefs, computed} from 'vue';
+import {ref, watch, reactive, toRefs, computed, provide, onMounted} from 'vue';
+import Child from './components/Child.vue'
 
 export default {
   name: 'App',
+  components: {
+    Child
+  },
   setup(){
-    const fname = ref('');
-    const lname = ref('');
-    watch([fname, lname],(newVal, oldVal)=>{
-      console.log("new value is: ",newVal[0]);
-      console.log("old value is: ",oldVal[0]);
-      console.log("new value is: ",newVal[1]);
-      console.log("old value is: ",oldVal[1]);
-    },
-    {
-      immediate: true
-    })
+    const movie = ref("");
+
+    function doSomething(args){
+      alert(args);
+    }
+    
     return{
-      fname,
-      lname
+      movie,
+      doSomething
     }
   }
 }
