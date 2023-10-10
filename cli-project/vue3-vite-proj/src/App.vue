@@ -1,6 +1,12 @@
 <template>
-  <input type="text" v-model="fname">
-  <input type="text" v-model="lname">
+  <div>
+    <label for="">Enter first name: </label>
+    <input type="text" v-model="fname">
+  </div>
+  <div>
+    <label for="">Enter last name: </label>
+    <input type="text" v-model="lname">
+  </div>
 </template>
 
 <script> 
@@ -9,20 +15,20 @@ import {ref, watch, reactive, toRefs, computed} from 'vue';
 export default {
   name: 'App',
   setup(){
-    const fname = ref('');
-    const lname = ref('');
-    watch([fname, lname],(newVal, oldVal)=>{
-      console.log("new value is: ",newVal[0]);
-      console.log("old value is: ",oldVal[0]);
-      console.log("new value is: ",newVal[1]);
-      console.log("old value is: ",oldVal[1]);
-    },
-    {
-      immediate: true
+    const state = reactive({
+      fname: '',
+      lname: ''
     })
+
+    watch(state,function(newval, oldval){
+      console.log("New value is: ",newval.fname);
+      console.log("New value is: ",newval.lname);
+      console.log("Old value is: ",oldval.fname);
+      console.log("Old value is: ",oldval.lname);
+    })
+
     return{
-      fname,
-      lname
+      ...toRefs(state)
     }
   }
 }
