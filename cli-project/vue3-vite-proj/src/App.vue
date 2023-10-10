@@ -1,6 +1,6 @@
 <template>
   <input type="text" v-model="movie">
-  <Child :movieName="movie" />
+  <Child :movieName="movie" @sayHelloTo="doSomething" />
 </template>
 
 <script> 
@@ -14,9 +14,14 @@ export default {
   },
   setup(){
     const movie = ref("");
+
+    function doSomething(args){
+      alert(args);
+    }
     
     return{
-      movie
+      movie,
+      doSomething
     }
   }
 }
