@@ -1,18 +1,21 @@
 <template>
-  <ComponentA />
-  <ComponentC />
+  <input type="text" ref="inputRef">
 </template>
 
 <script> 
-import {ref, watch, reactive, toRefs, computed, provide} from 'vue';
-import ComponentA from './components/ComponentA.vue';
-import ComponentC from './components/ComponentC.vue';
+import {ref, watch, reactive, toRefs, computed, provide, onMounted} from 'vue';
 
 export default {
   name: 'App',
-  components: {
-    ComponentA,
-    ComponentC
+  setup(){
+    const inputRef = ref(null);
+    onMounted(()=>{
+      inputRef.value.focus();
+    })
+
+    return{
+      inputRef
+    }
   }
 }
 </script>
