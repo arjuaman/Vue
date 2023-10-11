@@ -12,13 +12,15 @@
     <v-list density="compact" nav>
       <v-list-item
         prepend-icon="mdi-star"
-        title="Barca Trophies"
-        value="barcaTrophies"
+        title="Colored"
+        value="colored"
+        @click="selectOption(true)"
       ></v-list-item>
       <v-list-item
         prepend-icon="mdi-image"
-        title="Spain Trophies"
-        value="spainTrophies"
+        title="Grayed"
+        value="grayed"
+        @click="selectOption(false)"
       ></v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -27,5 +29,15 @@
 <script>
 export default {
   name: "Sidebar",
+  setup(props, context){
+    const selectOption = (val) => {
+      context.emit("color-current", val);
+    }
+
+    return {
+      selectOption
+    }
+  },
+  emits:['color-current']
 };
 </script>

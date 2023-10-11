@@ -4,8 +4,8 @@
       <v-col v-for="i in 200" :key="i" cols="4" sm="3" md="2" lg="1">
         <v-card>
           <v-img
-            :src="`https://picsum.photos/500/300?image=${i * 5 + 10}`"
-            :lazy-src="`https://picsum.photos/10/10?image=${i * 5 + 10}`"
+            :src="`https://picsum.photos/500/300?image=${i * 5 + 10}${isWithColor?'':'&grayscale'}`"
+            :lazy-src="`https://picsum.photos/10/10?image=${i * 5 + 10}${isWithColor?'':'&grayscale'}`"
             aspect-ratio="1"
             cover
           />
@@ -26,6 +26,7 @@
 <script>
 export default {
   name: "Gallery",
+  props: ['isWithColor']
 };
 </script>
 
