@@ -1,27 +1,20 @@
 <template>
-  <input type="text" v-model="movie">
-  <Child :movieName="movie" @sayHelloTo="doSomething" />
+  <div>Count is: {{var1}}</div>
+  <button @click="varFunc">Increment Count</button>
 </template>
 
 <script> 
-import {ref, watch, reactive, toRefs, computed, provide, onMounted} from 'vue';
-import Child from './components/Child.vue'
+import useCounter from './composables/useCounter.js'
 
 export default {
   name: 'App',
-  components: {
-    Child
-  },
   setup(){
-    const movie = ref("");
+    const [var1, varFunc] = useCounter();
+    console.log(var1, varFunc);
 
-    function doSomething(args){
-      alert(args);
-    }
-    
     return{
-      movie,
-      doSomething
+      var1,
+      varFunc
     }
   }
 }
