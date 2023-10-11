@@ -22,3 +22,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+Deployed on: https://6526743054a5623885dd70e2--dazzling-bombolone-82432d.netlify.app/
