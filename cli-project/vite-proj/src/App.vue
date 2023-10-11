@@ -1,15 +1,19 @@
 <template>
-  <HelloWorld />
+  <v-app>
+    <Sidebar />
+    <v-main> 
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/Sidebar.vue'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Sidebar,
   },
 
   data: () => ({
