@@ -1,4 +1,4 @@
-# vite-vuetify-proj
+# vite-proj
 
 ## Project setup
 ```
